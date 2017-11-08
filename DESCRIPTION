@@ -1,8 +1,8 @@
 Package: CovTools
 Type: Package
 Title: Statistical Tools for Covariance Analysis
-Version: 0.1.0
-Authors@R: c(person("Kyoungjae","Lee",role="aut",email="leekjstat@gmail.com"),person("Kisung", "You", role = c("aut", "cre"),email = "kyou@nd.edu"))
+Version: 0.2.0
+Authors@R: c(person("Kyoungjae","Lee",role="aut",email="leekjstat@gmail.com"),person("Lizhen", "Lin", role = "ctb", email="lizhen.lin@nd.edu"),person("Kisung", "You", role = c("aut", "cre"),email = "kyou@nd.edu"))
 Description: Covariance is of universal prevalence across various disciplines within statistics.
     We provide a rich collection of geometric and inferential tools for convenient analysis of
     covariance structures, topics including distance measures, mean covariance estimator,
@@ -12,14 +12,16 @@ Description: Covariance is of universal prevalence across various disciplines wi
 License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
-Imports: Rcpp (>= 0.12.10), geigen, shapes, expm, mvtnorm, stats,
-        Matrix
+Depends: R (>= 2.14.0)
+Imports: Rcpp, geigen, shapes, expm, mvtnorm, stats, Matrix,
+        doParallel, foreach, parallel, pracma, utils
 LinkingTo: Rcpp, RcppArmadillo
 RoxygenNote: 6.0.1
 NeedsCompilation: yes
-Packaged: 2017-10-14 16:37:19 UTC; kisung
+Packaged: 2017-11-08 16:26:07 UTC; kisung
 Author: Kyoungjae Lee [aut],
+  Lizhen Lin [ctb],
   Kisung You [aut, cre]
 Maintainer: Kisung You <kyou@nd.edu>
 Repository: CRAN
-Date/Publication: 2017-10-16 17:46:59 UTC
+Date/Publication: 2017-11-08 16:32:29 UTC

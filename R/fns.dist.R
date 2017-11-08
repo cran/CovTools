@@ -400,18 +400,23 @@ measure.RootEuclidean.3d <- function(array3d){
 #' @noRd
 measure.Procrustes.SS.3d <- function(array3d){
   M = dim(array3d)[3]
+  chol3d  = array(0,dim(array3d))
+  for (i in 1:M){
+    chol3d[,,i] = t(chol(array3d[,,i]))
+  }
   outdist = array(0,c(M,M))
   for (i in 1:(M-1)){
-    A = array3d[,,i]
+    cholA = array3d[,,i]
     for (j in (i+1):M){
-      B = array3d[,,j]
-      value = port_distcov(A,B,method="Procrustes.SS")
-      outdist[i,j] = value
-      outdist[j,i] = value
+      cholB = array3d[,,j]
+      value = pracma::procrustes(cholA,cholB)
+      outdist[i,j] = value$d
+      outdist[j,i] = value$d
     }
   }
   return(outdist)
 }
+
 
 # 11. Procrustes.Full -----------------------------------------------------
 #' @keywords internal

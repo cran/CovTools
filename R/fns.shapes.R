@@ -23,7 +23,7 @@ port_estcov <- function(S, method=c("Procrustes.SS","Procrustes.Full","AIRM")){
 # port : 'distcov' --------------------------------------------------------
 #' @keywords internal
 #' @noRd
-port_distcov <- function(A,B,method=c("Procrustes.SS","Procrustes.Full","AIRM")){
+port_distcov <- function(A,B,method=c("Procrustes.Full","AIRM")){
   if (missing(method)){
     stop("* port from shapes : method is not defined.")
   }
@@ -32,10 +32,8 @@ port_distcov <- function(A,B,method=c("Procrustes.SS","Procrustes.Full","AIRM"))
   }
   method = match.arg(method)
   output = switch(method,
-                  Procrustes.SS = shapes::distProcrustesSizeShape(A,B),
                   Procrustes.Full=shapes::distProcrustesFull(A,B),
                   AIRM = shapes::distRiemPennec(A,B)
                   )
   return(output)
 }
-

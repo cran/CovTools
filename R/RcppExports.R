@@ -5,6 +5,12 @@ rcpp_geigen <- function(A, B) {
     .Call('_CovTools_rcpp_geigen', PACKAGE = 'CovTools', A, B)
 }
 
+#' @keywords internal
+#' @noRd
+rcpp_ADMMprecision <- function(S, lambda) {
+    .Call('_CovTools_rcpp_ADMMprecision', PACKAGE = 'CovTools', S, lambda)
+}
+
 rcpptest1_cai11 <- function(X) {
     .Call('_CovTools_rcpptest1_cai11', PACKAGE = 'CovTools', X)
 }
