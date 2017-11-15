@@ -6,9 +6,9 @@ using namespace Rcpp;
 using namespace arma;
 
 double rcpp_objective(arma::mat& S, arma::mat& X,arma::mat& Z, double lambda){
-  double term1 = trace(S*X);
-  double term2 = log(det(X));
-  double term3 = lambda*norm(vectorise(Z),1);
+  double term1 = arma::trace(S*X);
+  double term2 = log(arma::det(X));
+  double term3 = lambda*arma::norm(vectorise(Z),1);
   double output = term1-term2+term3;
   return(output);
 }
@@ -85,11 +85,11 @@ arma::mat rcpp_ADMMprecision(arma::mat& S, const double lambda){
     r_norm(k) = arma::norm(X-Z,"fro");
     s_norm(k) = arma::norm(-rho*(Z-Zold),"fro");
     if (norm(X,"fro")>norm(Z,"fro")){
-      eps_pri(k) = sqrt(n*n)*abstol + reltol*norm(X,"fro");
+      eps_pri(k) = static_cast<double>(n)*abstol + reltol*norm(X,"fro");
     } else {
-      eps_pri(k) = sqrt(n*n)*abstol + reltol*norm(Z,"fro");
+      eps_pri(k) = static_cast<double>(n)*abstol + reltol*norm(Z,"fro");
     }
-    eps_dual(k) = sqrt(n*n)*abstol + reltol*norm(rho*U, "fro");
+    eps_dual(k) = static_cast<double>(n)*abstol + reltol*norm(rho*U, "fro");
 
     if ((r_norm(k)<eps_pri(k))&&(s_norm(k)<eps_dual(k))){
       break;

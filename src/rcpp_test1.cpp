@@ -1,4 +1,5 @@
 #include <RcppArmadillo.h>
+#include <cmath>
 
 // [[Rcpp::depends(RcppArmadillo)]]
 
@@ -21,7 +22,7 @@ double rcpptest1_cai11(arma::mat& X){
     Xj = X.row(j);
     for (int i=0;i<(j-1);i++){
       Xi = X.row(i);
-      hXiXj += pow(dot(Xi,Xj),2)-(dot(Xi,Xi)+dot(Xj,Xj)) + p;
+      hXiXj += std::pow(dot(Xi,Xj),2)-(dot(Xi,Xi)+dot(Xj,Xj)) + p;
     }
   }
   // 1-3. return hXiXj

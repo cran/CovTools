@@ -31,7 +31,6 @@
 #' @importFrom foreach "%dopar%" foreach registerDoSEQ
 #' @importFrom parallel detectCores stopCluster makeCluster
 #' @importFrom doParallel registerDoParallel
-#'
 #' @useDynLib CovTools
 NULL
 

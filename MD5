@@ -1,4 +1,4 @@
-a11781dfa01e81474754faeaba5731ec *DESCRIPTION
+029b0cc2c012a8831aabb16b608dd157 *DESCRIPTION
 f092570fd921ddb7ee1b8335b31a7ee2 *NAMESPACE
 b8972514c0d74c6b02d23513e9fe2259 *R/CovDist.R
 5db31cae6d873a4129245758da4510cb *R/CovEst.R
@@ -18,7 +18,7 @@ ec8b05cc217913a4df04a8db13d7f460 *R/fns.preest.R
 bf4769b4381ed4d30875c37a27241de4 *R/fns.test1.R
 51c294a4f09d9f98035c1e810348c61b *R/fns.test2.R
 e5d93214bd457e17137bf811d3aa0ac5 *R/init.R
-089e3c692a0679e6fc0916d137ff41d2 *R/package-CovTools.R
+192d2497d515bc8bc4ce5bc84a9efb27 *R/package-CovTools.R
 658bcf99ecb3ed85bd5a54263870c231 *man/CovDist.Rd
 90152597ee2ce9922607cfb3871ef783 *man/CovEst.Rd
 ade8f835078a440b2bbfd5226fd5d9e8 *man/CovEst.auto.Rd
@@ -32,7 +32,6 @@ b96eb4c8ea213d1e694738fa6807fe5f *man/PreEst.auto.Rd
 d791d4369ae127521d2c2ddf7c30d48e *src/Makevars
 ea50cb190cfa66abc98cbaeda6e8e76f *src/Makevars.win
 9ff17c321a8e8711d4f45b08eeca818d *src/RcppExports.cpp
-875e8cd78b07db982e25dd81f986c7f8 *src/rcpp_covest.cpp
 f2efc0f10a654cb299a30091eeff4c97 *src/rcpp_expm.cpp
-ed50141b68fb82bc46b36bb9aa3849fa *src/rcpp_preest.cpp
-65d4533bb5ba42d8494d6e42c8f75b2c *src/rcpp_test1.cpp
+2448eb3cac1df4f2a6f0a3293901e811 *src/rcpp_preest.cpp
+8c8686ee4883f5ae3f389c9bc6aaed9b *src/rcpp_test1.cpp
