@@ -1,8 +1,8 @@
 Package: CovTools
 Type: Package
 Title: Statistical Tools for Covariance Analysis
-Version: 0.2.1
-Authors@R: c(person("Kyoungjae","Lee",role="aut",email="leekjstat@gmail.com"),person("Lizhen", "Lin", role = "ctb", email="lizhen.lin@nd.edu"),person("Kisung", "You", role = c("aut", "cre"),email = "kyou@nd.edu"))
+Version: 0.3.0
+Authors@R: c(person("Kyoungjae","Lee",role="aut",email="leekjstat@gmail.com"),person("Lizhen", "Lin", role = "ctb", email="lizhen.lin@nd.edu"),person("Kisung", "You", role = c("aut", "cre"),email = "kyou@nd.edu",comment=c(ORCID="0000-0002-8584-459X")))
 Description: Covariance is of universal prevalence across various disciplines within statistics.
     We provide a rich collection of geometric and inferential tools for convenient analysis of
     covariance structures, topics including distance measures, mean covariance estimator,
@@ -14,14 +14,15 @@ Encoding: UTF-8
 LazyData: true
 Depends: R (>= 2.14.0)
 Imports: Rcpp, geigen, shapes, expm, mvtnorm, stats, Matrix,
-        doParallel, foreach, parallel, pracma
+        doParallel, foreach, parallel, pracma, Rdpack
 LinkingTo: Rcpp, RcppArmadillo
 RoxygenNote: 6.0.1
+RdMacros: Rdpack
 NeedsCompilation: yes
-Packaged: 2017-11-15 23:08:01 UTC; kisung
+Packaged: 2018-02-18 04:45:22 UTC; kisung
 Author: Kyoungjae Lee [aut],
   Lizhen Lin [ctb],
-  Kisung You [aut, cre]
+  Kisung You [aut, cre] (<https://orcid.org/0000-0002-8584-459X>)
 Maintainer: Kisung You <kyou@nd.edu>
 Repository: CRAN
-Date/Publication: 2017-11-15 23:17:32 UTC
+Date/Publication: 2018-02-18 04:55:34 UTC
