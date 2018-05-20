@@ -1,7 +1,7 @@
 Package: CovTools
 Type: Package
 Title: Statistical Tools for Covariance Analysis
-Version: 0.3.0
+Version: 0.3.1
 Authors@R: c(person("Kyoungjae","Lee",role="aut",email="leekjstat@gmail.com"),person("Lizhen", "Lin", role = "ctb", email="lizhen.lin@nd.edu"),person("Kisung", "You", role = c("aut", "cre"),email = "kyou@nd.edu",comment=c(ORCID="0000-0002-8584-459X")))
 Description: Covariance is of universal prevalence across various disciplines within statistics.
     We provide a rich collection of geometric and inferential tools for convenient analysis of
@@ -19,10 +19,10 @@ LinkingTo: Rcpp, RcppArmadillo
 RoxygenNote: 6.0.1
 RdMacros: Rdpack
 NeedsCompilation: yes
-Packaged: 2018-02-18 04:45:22 UTC; kisung
+Packaged: 2018-05-20 09:16:02 UTC; kisung
 Author: Kyoungjae Lee [aut],
   Lizhen Lin [ctb],
-  Kisung You [aut, cre] (<https://orcid.org/0000-0002-8584-459X>)
+  Kisung You [aut, cre] (<https://orcid.org/0000-0002-8584-459X>>)
 Maintainer: Kisung You <kyou@nd.edu>
 Repository: CRAN
-Date/Publication: 2018-02-18 04:55:34 UTC
+Date/Publication: 2018-05-20 09:35:49 UTC
