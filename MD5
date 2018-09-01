@@ -1,4 +1,4 @@
-ed0700258ec9f28f4abc8d4f7eb3445a *DESCRIPTION
+66ee8026c38f95c40a0018ed994bb179 *DESCRIPTION
 0e101584b39a985defd1fdae47b12d47 *NAMESPACE
 e09248e6c5b12edb8a66b9e70d9c6afd *R/CovDist.R
 3c10dd90bee90a151113a2bcabd2cd65 *R/CovEst.adaptive.R
@@ -17,7 +17,7 @@ c5d51ee27b655d8d950f45691caf0dc7 *R/PreEst.glasso.R
 d81de205b76e05422716f4acd2ea92d2 *R/auxiliary.R
 661c5f5289d3b37f058ef3fc7043134e *R/auxiliary_invisible.R
 fa1566e56b9883dcded08396bd948d6b *R/fns.covest.R
-54bc625009578978b3abed17320bf790 *R/fns.dist.R
+62eb2cfe8f7cc4d924a628e766052996 *R/fns.dist.R
 480d0a3f43a367e70bba3c37d2ed4c90 *R/fns.mean.R
 ec8b05cc217913a4df04a8db13d7f460 *R/fns.preest.R
 8069e081d090c059080ff2021db4ce0b *R/fns.shapes.R
@@ -25,7 +25,7 @@ bf4769b4381ed4d30875c37a27241de4 *R/fns.test1.R
 51c294a4f09d9f98035c1e810348c61b *R/fns.test2.R
 e5d93214bd457e17137bf811d3aa0ac5 *R/init.R
 1b76bfb5981f4261f1417d8f2db19c74 *R/package-CovTools.R
-3da2332ebbe6e5d9c749526987327eae *build/partial.rdb
+a97c737acc8b590ad80a3db384c1d1ce *build/partial.rdb
 e67f6d92a56062263c07ab56607c2fec *inst/REFERENCES.bib
 e2d028d125570425eee3f4710563b5ce *man/CovDist.Rd
 49e2d17438341ce5c9cef8cfc8957257 *man/CovEst.adaptive.Rd
@@ -38,12 +38,12 @@ f5ef36683515e5200e13bb698e15ed5f *man/CovTest1.Rd
 e797a7b69bcf11cbe9f8cf6e56a146a7 *man/CovTest2.Rd
 62d3dbb716108573d6ecb452355b1f75 *man/CovTools-package.Rd
 f4014ef2cc3a1b77e3a7497d362a5f7a *man/PreEst.banded1.Rd
-46392eb2f9c8b287a2bed16e899247d3 *man/PreEst.banded2.Rd
-9ead7da7cd5181692c8d60f85ed53159 *man/PreEst.banded3.Rd
-4dd3c922910d877c827c55b05582765d *man/PreEst.glasso.Rd
+2b6273478d57dea11f269549089c1815 *man/PreEst.banded2.Rd
+e89709b88d0f4c1add81e144c6f71e48 *man/PreEst.banded3.Rd
+8811595d86ac98c730fcc56a6adc3f39 *man/PreEst.glasso.Rd
 f3c02bcd6a445ac3c43dc02c2c80b67b *man/samplecovs.Rd
-d791d4369ae127521d2c2ddf7c30d48e *src/Makevars
-ea50cb190cfa66abc98cbaeda6e8e76f *src/Makevars.win
+1a740c5b07467409fdbb2f078123829a *src/Makevars
+1a740c5b07467409fdbb2f078123829a *src/Makevars.win
 9ff17c321a8e8711d4f45b08eeca818d *src/RcppExports.cpp
 f2efc0f10a654cb299a30091eeff4c97 *src/rcpp_expm.cpp
 2448eb3cac1df4f2a6f0a3293901e811 *src/rcpp_preest.cpp
