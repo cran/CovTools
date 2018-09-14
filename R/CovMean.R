@@ -1,4 +1,4 @@
-#' Estimate mean covariance matrix
+#' Estimate Mean Covariance Matrix
 #'
 #' For a given 3-dimensional array where symmetric positive definite (SPD) matrices are stacked slice
 #' by slice, it estimates Frechet mean on an open cone of SPD matrices under corresponding metric/distance
@@ -18,12 +18,15 @@
 #' @return a \eqn{(p\times p)} mean covariance matrix estimated.
 #'
 #' @examples
+#' \dontrun{
 #' ## generate 100 sample covariances of size (5-by-5).
 #' samples = samplecovs(100,5)
 #'
 #' ## Compute mean of first 50 sample covariances from data under Normal(0,Identity).
 #' mLERM = CovMean(samples[,,1:50],method="LERM")
 #' mAIRM = CovMean(samples[,,1:50],method="AIRM")
+#' }
+
 #'
 #' @references
 #' \insertRef{dryden_non-euclidean_2009}{CovTools}

@@ -32,22 +32,33 @@
 #' \code{\link{PreEst.banded2}} \tab Bayesian Estimation of a Banded Precision Matrix (Lee 2017) \cr
 #' \code{\link{PreEst.banded3}} \tab Banded Precision Matrix Estimation via Bandwidth Test \cr
 #' \code{\link{PreEst.glasso}} \tab Graphical Lasso
-#' }, and
-#' (3) \strong{Hypothesis Tests}
+#' }
+#' (3) \strong{Frequentist Hypothesis Tests}
 #' \tabular{ll}{
 #' \emph{name of a function} \tab \emph{description} \cr
-#' \code{\link{CovTest1}} \tab 1-sample tests for covariance matrix \cr
-#' \code{\link{CovTest2}} \tab 2-sample tests for covariance matrices
+#' \code{\link{CovTest1}} \tab 1-sample Covariance Tests\cr
+#' \code{\link{CovTest2}} \tab 2-sample Covariance Tests
+#' }
+#' (4) \strong{Bayesian Hypothesis Tests}
+#' \tabular{ll}{
+#' \emph{name of a function} \tab \emph{description} \cr
+#' \code{\link{BayesTest1}} \tab 1-sample Bayesian Covariance Tests
+#' }
+#' (5) \strong{Others}
+#' \tabular{ll}{
+#' \emph{name of a function} \tab \emph{description} \cr
+#' \code{\link{DiagTest1}} \tab Diagonality Test of Covariance
 #' }
 #'
 #'
 #' @docType package
-#' @name CovTools-package
+#' @name package-CovTools
 #' @import shapes
 #' @import parallel
 #' @import doParallel
 #' @import foreach
 #' @import Rdpack
+#' @importFrom utils packageVersion
 #' @importFrom pracma procrustes flipud
 #' @importFrom Matrix nearPD
 #' @importFrom stats cov qnorm rnorm cor qt pnorm
