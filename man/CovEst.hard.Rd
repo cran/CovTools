@@ -4,8 +4,7 @@
 \alias{CovEst.hard}
 \title{Covariance Estimation via Hard Thresholding}
 \usage{
-CovEst.hard(X, thr = sqrt(log(ncol(X))/nrow(X)), nCV = 10,
-  parallel = FALSE)
+CovEst.hard(X, thr = sqrt(log(ncol(X))/nrow(X)), nCV = 10, parallel = FALSE)
 }
 \arguments{
 \item{X}{an \eqn{(n\times p)} matrix where each row is an observation.}
@@ -30,7 +29,8 @@ cross-validation scheme to select an optimal value.
 }
 \examples{
 ## generate data from multivariate normal with Identity covariance.
-data <- mvtnorm::rmvnorm(10, sigma=diag(10))
+pdim <- 5
+data <- matrix(rnorm(10*pdim), ncol=pdim)
 
 ## apply 4 different schemes
 #  mthr is a vector of regularization parameters to be tested
@@ -42,11 +42,13 @@ out3 <- CovEst.hard(data, thr=10)   # threshold value 10
 out4 <- CovEst.hard(data, thr=mthr) # automatic threshold checking
 
 ## visualize 4 estimated matrices
-par(mfrow=c(2,2), pty="s")
-image(pracma::flipud(out1$S), col=gray((0:100)/100), main="thr=0.1")
-image(pracma::flipud(out2$S), col=gray((0:100)/100), main="thr=1")
-image(pracma::flipud(out3$S), col=gray((0:100)/100), main="thr=10")
-image(pracma::flipud(out4$S), col=gray((0:100)/100), main="automatic")
+gcol <- gray((0:100)/100)
+opar <- par(mfrow=c(2,2), pty="s")
+image(out1$S[,pdim:1], col=gcol, main="thr=0.1")
+image(out2$S[,pdim:1], col=gcol, main="thr=1")
+image(out3$S[,pdim:1], col=gcol, main="thr=10")
+image(out4$S[,pdim:1], col=gcol, main="automatic")
+par(opar)
 
 }
 \references{

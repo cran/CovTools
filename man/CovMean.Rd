@@ -4,22 +4,22 @@
 \alias{CovMean}
 \title{Estimate Mean Covariance Matrix}
 \usage{
-CovMean(A, method = c("AIRM", "Cholesky", "Euclidean", "LERM",
-  "Procrustes.SS", "Procrustes.Full", "PowerEuclidean", "RootEuclidean"),
-  power = 1)
+CovMean(A, method = c("A", "C", "E", "L", "PS", "PF", "PE", "RE"), power = 1)
 }
 \arguments{
 \item{A}{a \eqn{(p\times p\times N)} 3d array of \eqn{N} SPD matrices.}
 
-\item{method}{the type of distance measures to be used; \code{"AIRM"} for Affine Invariant
-Riemannian Metric,
-\code{"Cholesky"} for Cholesky difference in Frobenius norm,
-\code{"Euclidean"} for naive Frobenius norm as distance,
-\code{"LERM"} for Log Euclidean Riemannian Metric,
-\code{"Procrustes.SS"} for Procrustes Size and Shape measure,
-\code{"Procrustes.Full"} for Procrustes analysis with scale,
-\code{"PowerEuclidean"} for weighted eigenvalues by some exponent, and
-\code{"RootEuclidean"} for matrix square root.}
+\item{method}{the type of distance measures to be used;
+\describe{
+\item{\code{"A"}}{(AIRM) Affine Invariant Riemannian Metric}
+\item{\code{"C"}}{(Cholesky) Cholesky difference in Frobenius norm}
+\item{\code{"E"}}{(Euclidean) naive Frobenius norm as distance}
+\item{\code{"L"}}{(LERM) Log Euclidean Riemannian Metric}
+\item{\code{"PS"}}{(Procrustes.SS) Procrustes Size and Shape measure}
+\item{\code{"PF"}}{(Procrustes.Full) Procrustes analysis with scale}
+\item{\code{"PE"}}{(PowerEuclidean) weighted eigenvalues by some exponent}
+\item{\code{"RE"}}{(RootEuclidean) matrix square root}
+}}
 
 \item{power}{a non-zero number for PowerEuclidean distance.}
 }
@@ -33,12 +33,32 @@ measure.
 }
 \examples{
 \dontrun{
-## generate 100 sample covariances of size (5-by-5).
-samples = samplecovs(100,5)
+## generate 50 sample covariances of size (10-by-10).
+pdim    = 10
+samples = samplecovs(50,pdim)
 
-## Compute mean of first 50 sample covariances from data under Normal(0,Identity).
-mLERM = CovMean(samples[,,1:50],method="LERM")
-mAIRM = CovMean(samples[,,1:50],method="AIRM")
+## compute means of first 50 sample covariances from data under Normal(0,Identity).
+mA = CovMean(samples, method="A")
+mC = CovMean(samples, method="C")
+mE = CovMean(samples, method="E")
+mL = CovMean(samples, method="L")
+mPS = CovMean(samples, method="PS")
+mPF = CovMean(samples, method="PF")
+mPE = CovMean(samples, method="PE")
+mRE = CovMean(samples, method="RE")
+
+#' ## visualize
+opar <- par(mfrow=c(3,3), pty="s")
+image(diag(pdim)[,pdim:1], main="true covariance")
+image(mA[,pdim:1], main="AIRM")
+image(mC[,pdim:1], main="Cholesky")
+image(mE[,pdim:1], main="Euclidean")
+image(mL[,pdim:1], main="LERM")
+image(mPS[,pdim:1], main="Procrustes.SS")
+image(mPF[,pdim:1], main="Procrustes.Full")
+image(mPE[,pdim:1], main="PowerEuclidean")
+image(mRE[,pdim:1], main="RootEuclidean")
+par(opar)
 }
 
 }
