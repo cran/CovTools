@@ -26,7 +26,7 @@
 #' @importFrom utils packageVersion
 #' @importFrom pracma procrustes
 #' @importFrom Matrix nearPD
-#' @importFrom stats cov qnorm rnorm cor qt pnorm as.dist cmdscale
+#' @importFrom stats cov qnorm rnorm cor qt pnorm
 #' @importFrom mvtnorm rmvnorm
 #' @importFrom expm expm sqrtm logm
 #' @importFrom geigen geigen

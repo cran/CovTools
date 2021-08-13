@@ -6,36 +6,32 @@
 \usage{
 CovDist(
   A,
-  method = c("A", "B", "C", "E", "H", "J", "K", "L", "PS", "PF", "PE", "RE"),
-  power = 1,
-  as.dist = FALSE
+  method = c("AIRM", "Bhattacharyya", "Cholesky", "Euclidean", "Hellinger", "JBLD",
+    "KLDM", "LERM", "Procrustes.SS", "Procrustes.Full", "PowerEuclidean",
+    "RootEuclidean"),
+  power = 1
 )
 }
 \arguments{
 \item{A}{a \eqn{(p\times p\times N)} 3d array of \eqn{N} SPD matrices.}
 
-\item{method}{the type of distance measures to be used;
-\describe{
-\item{\code{"A"}}{(AIRM) Affine Invariant Riemannian Metric}
-\item{\code{"B"}}{(Bhattacharyya) Bhattacharyya distance based on normal model}
-\item{\code{"C"}}{(Cholesky) Cholesky difference in Frobenius norm}
-\item{\code{"E"}}{(Euclidean) naive Frobenius norm as distance}
-\item{\code{"H"}}{(Hellinger) Hellinger distance based on normal model}
-\item{\code{"J"}}{(JBLD) Jensen-Bregman Log Determinant Distance}
-\item{\code{"K"}}{(KLDM) symmetrized Kullback-Leibler Distance Measure}
-\item{\code{"L"}}{(LERM) Log Euclidean Riemannian Metric}
-\item{\code{"PS"}}{(Procrustes.SS) Procrustes Size and Shape measure}
-\item{\code{"PF"}}{(Procrustes.Full) Procrustes analysis with scale}
-\item{\code{"PE"}}{(PowerEuclidean) weighted eigenvalues by some exponent}
-\item{\code{"RE"}}{(RootEuclidean) matrix square root}
-}}
+\item{method}{the type of distance measures to be used; \code{"AIRM"} for Affine Invariant
+Riemannian Metric, \code{"Bhattacharyya"} for Bhattacharyya distance based on normal model,
+\code{"Cholesky"} for Cholesky difference in Frobenius norm,
+\code{"Euclidean"} for naive Frobenius norm as distance,
+\code{"Hellinger"} for Hellinger distance based on normal model,
+\code{"JBLD"} for Jensen-Bregman Log Determinant Distance,
+\code{"KLDM"} for symmetrized Kullback-Leibler Distance Measure,
+\code{"LERM"} for Log Euclidean Riemannian Metric,
+\code{"Procrustes.SS"} for Procrustes Size and Shape measure,
+\code{"Procrustes.Full"} for Procrustes analysis with scale,
+\code{"PowerEuclidean"} for weighted eigenvalues by some exponent, and
+\code{"RootEuclidean"} for matrix square root.}
 
 \item{power}{a non-zero number for PowerEuclidean distance.}
-
-\item{as.dist}{a logical; \code{TRUE} to return a \code{dist} object, \code{FALSE} otherwise.}
 }
 \value{
-an \eqn{(N\times N)} symmetric matrix of pairwise distances or a \code{dist} object via \code{as.dist} option.
+an \eqn{(N\times N)} symmetric matrix of pairwise distances.
 }
 \description{
 For a given 3-dimensional array where symmetric positive definite (SPD) matrices are stacked slice
@@ -45,24 +41,18 @@ symmetry, and triangle inequalities. Other non-metric measures represent \emph{d
 two SPD objects.
 }
 \examples{
-## generate 50 SPD matrices of size (5-by-5)
-samples = samplecovs(50,5)
+## generate 100 SPD matrices of size (5-by-5)
+samples = samplecovs(100,5)
 
-## get pairwise distance for several methods
-distA = CovDist(samples, method="A")
-distB = CovDist(samples, method="B")
-distC = CovDist(samples, method="C")
+## get pairwise distance for "AIRM"
+distAIRM = CovDist(samples, method="AIRM")
 
 ## dimension reduction using MDS
-ssA = stats::cmdscale(distA, k=2)
-ssB = stats::cmdscale(distB, k=2)
-ssC = stats::cmdscale(distC, k=2)
+ss = cmdscale(distAIRM)
 
 ## visualize
-opar <- par(mfrow=c(1,3), pty="s")
-plot(ssA ,main="project with AIRM", pch=19)
-plot(ssB ,main="project with Bhattacharyya", pch=19)
-plot(ssC ,main="project with Cholesky", pch=19)
+opar <- par(no.readonly=TRUE)
+plot(ss[,1],ss[,2],main="2d projection")
 par(opar)
 
 }
